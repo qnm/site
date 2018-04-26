@@ -46,44 +46,60 @@ services:
       memory: 1024
 ```
 
-### Scaling the Rack
+### Autoscaling
 
-Your Rack can scale its own instance count based on the needs of the containers it provisions.
+There are two dimension for scale on a Convox Rack:
 
-Every minute, your Rack runs an autoscale calculation to determine how many instances you need in your cluster. This calculation involves ports, memory, and CPU required by your services. When appropriate, autoscale will update your Rack instance count via a CloudFormation stack update. Autoscale will not change your instance type.
+* The number of instances (servers) running that provide capacity to launch containers
+* The number of processes (containers) running for each service
 
-During a deployment, the calculation gets more nuanced, since processes from an old release and a new release will temporarily run at the same time. This is known as a rolling deployment or [rolling update](/docs/rolling-updates). In ECS terms, this translates to having tasks from both the primary (new) deployment of each service and the active deployment (the one being replaced) of each service running at the same time. Autoscaling will take into account the number of instances needed to run the processes from both releases, i.e. the tasks in both primary and active ECS service deployments.
+Convox can autoscale in both of these dimensions.
 
-When a deployment finishes, the old ECS tasks get terminated, and autoscale scales the Rack back down to the original instance count. This scaling down happens gradually--one instance at a time, every 5 minutes--to give ECS time to rebalance tasks across the instances in your cluster.
+#### Rack Autoscaling
 
-#### Why does my Rack keep autoscaling?
+Rack-level autoscaling is enabled by default when you install a new Rack. When Rack-level autoscaling is enabled, the number of instances currently running will continually adjust based on the current container workload.
 
-If your Rack shows more autoscaling activity than expected, there are a few possible explanations.
+This level of autoscaling can be adjusted with the Rack parameter `Autoscale`:
 
-First, note that any services with open ports you have running at scale of `n` will result in `n+1` instances. This is to allow for rolling deployments.
+    $ convox rack params set Autoscale=Yes
 
-You can also look for anomalies in the Rack's autoscaling log events with `convox rack logs --filter=autoscale`.
+#### Service Autoscaling
 
-### Manually scaling a Rack
-
-Autoscaling is enabled by default. To disable it, set the `Autoscale` parameter:
-
-```
-$ convox rack params set Autoscale=No
-```
-
-You can define both the type and count of instances being run in your Rack.
+Service-level autoscaling is controlled in the `convox.yml`:
 
 ```
-$ convox rack scale --type=m4.xlarge --count=3
-Name     demo
-Status   updating
-Version  20160409181028
-Count    3
-Type     m4.xlarge
+service:
+  web:
+    scale:
+      count: 1-10
+      targets:
+        cpu: 70
+        memory: 90
+        requests: 200
 ```
 
-<div class="block-callout block-show-callout type-warning" markdown="1">
-  The minimum instance count for a Rack is 3.
-</div>
+Setting scale targets for a service will cause the service-level autoscaler to adjust the number of running processes for a particular service to try to meet the targets you define.
 
+* `cpu`: Average CPU utilization (%) for all processes
+* `memory`: Average Memory utilization (%) for all processes
+* `requests:` Requests per minute per process
+
+You can also use custom Cloudwatch metrics as a target for the service autoscaler:
+
+```
+service:
+  worker:
+    scale:
+      count: 1-10
+      targets:
+        custom:
+          AWS/SQS/ApproximateNumberOfMessagesVisible:
+            aggregate: max
+            value: 20
+            dimensions:
+              QueueName: myqueue
+```
+
+These settings would continually adjust the level of workers to keep the maximum number of messages waiting in the queue to 20.
+
+You can define any or all of these targets for each service. The autoscaler will select the maximum number of processes required to meet all of the defined targets.
