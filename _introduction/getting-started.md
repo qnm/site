@@ -46,20 +46,6 @@ Click the **Setup** button then **Connect the Convox CLI** to get your API key.
 
 Next, [install the Convox CLI](/docs/installation/) for your platform.
 
-<pre id="install-mac">
-$ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
-$ unzip /tmp/convox.zip -d /usr/local/bin
-</pre>
-
-<pre id="install-linux" class="hidden" >
-$ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
-$ unzip /tmp/convox.zip -d /usr/local/bin
-</pre>
-
-<p id="install-windows" class="hidden">
-On Windows, download and run <a href="https://dl.equinox.io/convox/convox/stable">Windows Installer</a>. Read the <a href="https://convox.com/docs/windows/">Windows Reference</a> for full details.
-</p>
-
 Finally, use the `convox login` command with your API key:
 
 <pre id="login">

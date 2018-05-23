@@ -15,31 +15,25 @@ You can install it via the command line:
 
 ## OS X
 
-    $ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
-    $ unzip /tmp/convox.zip -d /usr/local/bin
+    $ curl -L https://convox.com/cli/osx/convox -o /tmp/convox
+    $ sudo mv /tmp/convox /usr/local/bin/convox
+    $ sudo chmod 755 /usr/local/bin/convox
 
 #### Homebrew
 
 Alternatively, on OSX you can also install via Homebrew:
 
     $ brew install convox
-    $ convox update
-    Updating convox: OK, 20170203184626
 
 ## Linux
 
-    $ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
-    $ unzip /tmp/convox.zip -d /usr/local/bin
+    $ curl -L https://convox.com/cli/linux/convox -o /tmp/convox
+    $ sudo mv /tmp/convox /usr/local/bin/convox
+    $ sudo chmod 755 /usr/local/bin/convox
 
 ## Windows
 
-Windows users can download the installer [here](https://dl.equinox.io/convox/convox/stable).
-
-See the [Windows Reference](/docs/windows/) for details.
-
-## CentOS
-
-CentOS users can download the .rpm [here](https://dl.equinox.io/convox/convox/stable).
+    $ curl -L https://convox.com/cli/windows/convox.exe -O
 
 # Next steps
 
@@ -56,12 +50,7 @@ After installing Convox, you'll need to `convox login`:
 To update the CLI you can run `convox update`:
 
     $ convox update
-    Updating convox/proxy: OK
-    Updating convox: OK, 20161111173317
-
-## Extras
-
-You can also set up [shell auto-completion features](/docs/cli#shell-autocomplete-support) and [PS1 helpers](/docs/cli#active-rack-command-prompt-helper) for your terminal prompt.
+    Updating convox to 20211231000000: OK
 
 ## Further reading
 
