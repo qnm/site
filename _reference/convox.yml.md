@@ -39,11 +39,22 @@ The `convox.yml` file is a configuration file used to describe your application 
 
 ### Sections
 
+* **Environment** - Global environment definition for all services
 * **Resources** - Network-attached dependencies of the app
 * **Services** - Your application process(es)
 * **Timers** - Recurring, scheduled tasks
 
 In the following sections we will take a close look at each section  and explore its configuration options.
+
+## Environment
+
+```yaml
+environment:
+  - REQUIRED
+  - DEFAULT=value
+```
+
+This section acts similar to the `environment:` section for each individual service but applies to all services in the manifest.
 
 ## Resources
 
