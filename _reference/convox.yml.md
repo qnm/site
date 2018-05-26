@@ -192,7 +192,7 @@ Use an external Docker image to back this service.
 
 ### internal
 
-Flag app as an internal app, preventing access to it from outside your VPC. Defaults to `false`.
+Flag a service as internal, preventing access to it from outside your VPC. Defaults to `false`.
 
 Your rack must have the `Internal` param set to Yes to deploy internal services. You can set it with:
 
