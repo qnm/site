@@ -230,9 +230,10 @@ A value, in dollars, that you want to pay for spot instances. If spot instances 
 
 ### SslPolicy
 
-Specify an SSL policy for the primary Rack load balancer. For a list of valid values [click here](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies).
+Specify an SSL policy for the primary Rack load balancer.
 
-| Default value | *<blank>* |
+| Default value  | *<blank>* |
+| Allowed values | [ELB SSL Policies](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) |
 
 ### Subnet0CIDR
 
