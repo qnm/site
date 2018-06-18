@@ -53,7 +53,7 @@ Override the default build image.
 
 This parameter is used for local [development on Rack](https://github.com/convox/rack/blob/master/Development.md#build-image). This is primarily used for development purposes only. General users should not set this parameter (which is not related to `BuildInstance` below).
 
-| Default value | "" |
+| Default value | *<blank>* |
 
 ### BuildInstance
 
@@ -61,7 +61,7 @@ EC2 instance type to create and use as the Rack's [dedicated build instance](/do
 
 Note: the build instance will also use the [`InstanceBootCommand`](/docs/rack-parameters#instancebootcommand) and [`InstanceRunCommand`](/docs/rack-parameters#instanceruncommand) Rack params, if defined.
 
-| Default value  | ""                                                               |
+| Default value  | *<blank>*                                                        |
 | Allowed values | [EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/) |
 
 See also the [InstanceType](#instancetype) Rack parameter and our page on [AWS Instance Types](/docs/aws-instance-types/).
@@ -120,7 +120,7 @@ HTTP proxy for outbound HTTP connections (for network-restricted Racks).
 
 Set this value to the hostname (or IP address) and port number of an HTTP proxy to use for the ECS agent to connect to the internet.
 
-| Default value  | "" |
+| Default value | *<blank>* |
 
 For more information, see [HTTP Proxy Configuration](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/http_proxy_config.html) in the AWS docs.
 
@@ -132,7 +132,7 @@ For more information about using cloud-init with EC2, see the AWS doc [Running C
 
 The `InstanceBootCommand` will also apply to any [build instance](/docs/rack-parameters#buildinstance) associated with the Rack.
 
-| Default value | "" |
+| Default value | *<blank>* |
 
 #### Example: increase virtual memory
 
@@ -160,7 +160,7 @@ For more information about using cloud-init with EC2, see the AWS doc [Running C
 
 The `InstanceRunCommand` will also apply to any [build instance](/docs/rack-parameters#buildinstance) associated with the Rack.
 
-| Default value | "" |
+| Default value | *<blank>* |
 
 ### InstanceType
 
@@ -220,13 +220,19 @@ Put Rack API Load Balancer in a private network, i.e. have the Rack API use an I
 
 Specify a custom security group to use for the Rack's router.
 
-| Default value  | "" |
+| Default value  | *<blank>* |
 
 ### SpotInstanceBid
 
 A value, in dollars, that you want to pay for spot instances. If spot instances are available for the bid price, the Rack instances will use spot instances instead of on demand instances, resulting in significant cost savings. If the parameter is empty, spot instances will not be utilized. This should be used with the [OnDemandMinCount](#ondemandmincount) parameter to guarantee some on demand instances are running if spot instances are not available.
 
-| Default value  | "" |
+| Default value  | *<blank>* |
+
+### SslPolicy
+
+Specify an SSL policy for the primary Rack load balancer. For a list of valid values [click here](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies).
+
+| Default value | *<blank>* |
 
 ### Subnet0CIDR
 
