@@ -212,6 +212,10 @@ The resources enumerated in the `resources` section that will be available to th
 
 Set the initial scale parameters for this service.
 
+### sticky
+
+Toggle load balancer stickiness (using a cookie to keep a user associated with a single container) which helps some applications maintain consistency during rolling deploys. Defaults to `true`.
+
 ## Timers
 
 ```yaml
