@@ -212,6 +212,10 @@ The resources enumerated in the `resources` section that will be available to th
 
 Set the initial scale parameters for this service.
 
+### singleton
+
+Controls deployment behavior. When set to true existing containers for this service will be stopped before new containers are deployed.
+
 ### sticky
 
 Toggle load balancer stickiness (using a cookie to keep a user associated with a single container) which helps some applications maintain consistency during rolling deploys. Defaults to `true`.
