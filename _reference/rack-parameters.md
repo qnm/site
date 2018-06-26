@@ -96,6 +96,12 @@ Default container disk size in GB.
 
 | Default value | `10` |
 
+### EcsPollInterval
+
+How often (in seconds) to poll ECS for service updates(to inject into the app logs.
+
+| Default value  | `1` |
+
 ### EncryptEbs
 
 Enable encryption at rest for EBS volumes.
