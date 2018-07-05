@@ -18,6 +18,7 @@ Common causes for not passing health checks are:
 * The cluster does not have sufficient instances where a new process port is not already reserved by an older release
 * A process crashes immediately after starting due to a problem in the latest code
 * A process takes too long to initialize its server and therefore fails a network health check
+* Returning a status code outside the acceptable (200-399,401) range
 
 
 #### Health Check Options
