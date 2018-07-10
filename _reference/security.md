@@ -33,4 +33,4 @@ If you'd like to take network isolation one step further you can run your Rack i
 
 ## Dedicated Instances
 
-If you would like to ensure hardware single tenancy all the way down to the AWS infrastructure level you can do so by passing the `--dedicated` option to the `convox install` command when setting up your Rack.
+If you would like to ensure hardware single tenancy all the way down to the AWS infrastructure level you can do so by passing `Tenancy=dedicated` option to the `convox rack install` command when setting up your Rack.

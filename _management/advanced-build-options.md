@@ -10,10 +10,7 @@ Convox offers advanced options that can improve the speed, throughput and securi
 
 If you'd like to segregate builds from apps or just need better build performance, you can configure a dedicated build instance that will give more CPU, memory and caching to builds.
 
-You can set this:
-
-- on a new Rack by passing the `--build-instance <instance type>` flag to `convox install`,
-- on an existing Rack by setting the [`BuildInstance`](/docs/rack-parameters/#buildinstance) Rack parameter:
+You can modify the instance type of your build instance by setting the [`BuildInstance`](/docs/rack-parameters/#buildinstance) Rack parameter:
 
 ```
 $ convox rack params set BuildInstance=c4.large

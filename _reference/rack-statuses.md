@@ -16,7 +16,7 @@ This can correspond to `DELETE_IN_PROGRESS` in the AWS CloudFormation console.
 
 ## installing
 
-After [installing a Rack](/docs/installing-a-rack/) from the Console web interface or the CLI via `convox install`, the Rack will remain in the _installing_ status while resources are created and configured in your AWS account.
+After [installing a Rack](/docs/installing-a-rack/) from the Console web interface or the CLI via `convox rack install`, the Rack will remain in the _installing_ status while resources are created and configured in your AWS account.
 
 ## rollback
 
