@@ -12,7 +12,7 @@ When the CLI is logged into Console, `convox switch` tells Console which Rack to
 
 ### Difference between `convox login console.convox.com` and `convox login <rack hostname>`?
 
-When you're logged into Console, Console acts as a proxy for your active Rack. This is only available for Racks that have been installed via the Console web interface (or installed via CLI and manually added to the Console web interface). If you installed a Rack via `convox install` command, and want to log into it directly, you have to log into it by its hostname, e.g. `convox login <hostname> --password <password>` as they appear in `~/.convox/auth`.
+When you're logged into Console, Console acts as a proxy for your active Rack. This is only available for Racks that have been installed via the Console web interface (or installed via CLI and manually added to the Console web interface). If you installed a Rack via `convox rack install` command, and want to log into it directly, you have to log into it by its hostname, e.g. `convox login <hostname> --password <password>` as they appear in `~/.convox/auth`.
 
 You can switch between Racks which have been installed or manually added to Console with `convox switch <org>/<rackname>`.
 

@@ -13,7 +13,7 @@ Convox offers HIPAA customer references on request.
 Use [EC2 Dedicated Instances](https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/) and isolate them from the Internet.
 
 ```
-convox install --dedicated --private
+convox rack install aws Private=Yes Tenancy=dedicated
 ```
 
 See our [Private Networking doc](/docs/private-networking/) for more details.

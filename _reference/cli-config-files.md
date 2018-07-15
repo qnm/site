@@ -22,23 +22,13 @@ $ cat ~/.convox/auth
 }
 ```
 
-Note: When you install a Rack via `convox install`, you are logged in automatically to the newly created Rack.
+Note: When you install a Rack via `convox rack install`, you are logged in automatically to the newly created Rack.
 
 ### `~/.convox/host`
 
 This file contains the hostname of the Rack you're currently logged into.
 
 If you're logged into `console.convox.com`, you can `convox switch` between all the Racks you've added or installed via Console.
-
-### `~/.convox/id`
-
-If this file exists, its contents are used as if passed to the `--email` flag during `convox install`.
-
-It can be overridden by setting the [`CONVOX_EMAIL` environment variable](/docs/cli-environment-variables/).
-
-The ID is used for metrics and as the name of the CloudFormation stack.
-
-If not provided, a randomly generated string will be used.
 
 ### `~/.convox/rack`
 
