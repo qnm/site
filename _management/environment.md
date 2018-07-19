@@ -2,7 +2,7 @@
 title: "Environment"
 ---
 
-Convox applications are configured using environment variables.
+Convox applications are configured using environment variables. Environment variables be specified _both_ at the individual service level or on the application level for all services, for more information see the [convox.yml](/docs/convox-yml) reference.
 
 ### `convox.yml`
 
