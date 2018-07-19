@@ -40,6 +40,18 @@ If the listed reason is `Instance has failed at least the UnhealthyThreshold num
 Once you've found the reason, you can run [`convox apps cancel -a app_name`](/docs/deploying-to-convox/#canceling-a-deployment) to cancel this deployment. Once it rolls back, you can fix the error and try to deploy again.
 
 
+## Fargate
+
+To use have ECS use Fargate instead of regular EC2 you will need the following:
+
+- have a rack installed in [a region where Fargate is available](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)
+- specify `cpu` and `memory` in [convox.yml](/docs/convox-yml) that is [compatible with Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-cpu-memory-error.html)
+- either
+   - run _all_ your services and/or tasks in Fargate by setting the relevant [App Parameters](/docs/app-parameters)
+   - enable Fargate on a _per service_ basis via the [&lt;ProcessName&gt;Formation](/docs/gen1/app-parameters/) parameter
+      - e.g. `convox apps params set WebFormation=2,256,512,FARGATE`
+
+
 ## Still having trouble?
 
 Some good places to search are:
