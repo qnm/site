@@ -19,7 +19,7 @@ services:
   web:
     domain:
       - myapp.example.org
-      - *.example.net
+      - "*.example.net"
     port: 3000
 ```
 
