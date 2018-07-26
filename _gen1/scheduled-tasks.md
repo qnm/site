@@ -21,7 +21,7 @@ Example: to run the command `bin/myjob` every hour on the `web` process, you wou
 ```yaml
 web:
   labels:
-    - convox.cron.myjob=0 * * * ? * bin/myjob
+    - convox.cron.myjob=0 * * * ? bin/myjob
 ```
 
 #### Cron expression format
