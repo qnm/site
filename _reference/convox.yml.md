@@ -91,6 +91,7 @@ services:
       - HOST
     health: /health
     image: ubuntu:16.04
+    init: true
     port: 3000
     resources:
       - database
@@ -189,6 +190,10 @@ If you don't specify a path then the root path `/` will be used by default.
 ### image
 
 Use an external Docker image to back this service.
+
+### init
+
+Use a Docker-provided pid1 for intracontainer process management.
 
 ### internal
 
