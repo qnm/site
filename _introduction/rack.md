@@ -7,10 +7,6 @@ Convox Rack is an [open source](https://github.com/convox/rack) deployment platf
 
 ![](/assets/images/docs/what-is-a-rack/convox-rack-diagram.jpg)
 
-### Rack API
-
-Once installed your Rack will expose a simple [REST API](/api) for managing the Rack and its applications. This API is consumed by the [Convox CLI](https://dl.equinox.io/convox/convox/stable) and [Console](https://console.convox.com) or can be used to build your own workflows and automation.
-
 ### Dynamic Runtime
 
 A Rack will start multiple identical servers on which it will containerize and run your applications. By using a homogenous runtime we can treat each individual server as disposable and recover easily from common failure scenarios.
