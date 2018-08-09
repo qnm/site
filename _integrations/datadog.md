@@ -12,7 +12,7 @@ If you don’t have an account already, [sign up for Datadog](https://app.datado
 
 ## Deploy the Datadog Agent
 
-You can deploying the datadog agent as a Convox app with a very simple `convox.yml` manifest:
+You can deploy the datadog agent as a Convox app with a very simple `convox.yml` manifest:
 
 ```
 services:
