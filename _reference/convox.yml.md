@@ -70,13 +70,11 @@ A resource is a network-attached dependency of your application. This example co
 
 The type of resource to create.
 
-#### postgres
+Available types:
 
-A PostgreSQL database.
-
-#### redis
-
-A Redis cluster.
+  * `mysql`
+  * `postgres`
+  * `redis`
 
 ## Services
 
