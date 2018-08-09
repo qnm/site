@@ -72,6 +72,7 @@ The type of resource to create.
 
 Available types:
 
+  * `memcached`
   * `mysql`
   * `postgres`
   * `redis`
