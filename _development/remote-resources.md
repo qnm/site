@@ -73,17 +73,11 @@ and then you should be able to connect to localhost:5433.
 
 Let's say we want to proxy from port 8000 on our local machine to port 80 of the `counter` service in our [example repo](https://github.com/convox-examples/flask):
 
-First get the service endpoint by running `convox apps info`:
+First get the service endpoint by running `convox services`:
 
-```
-$ convox apps info
-Name       flask
-Status     running
-Release    RTYQLLNIUTZ
-Processes  counter redis
-Endpoints  flask-counter-NJS6JDQ-842041791.us-east-1.elb.amazonaws.com:80 (counter)
-           flask-counter-NJS6JDQ-842041791.us-east-1.elb.amazonaws.com:443 (counter)
-```
+    $ convox services
+		SERVICE  DOMAIN                                                       PORTS
+		web      flask-counter-NJS6JDQ-842041791.us-east-1.elb.amazonaws.com  80
 
 Then choose a port on your local machine (`8000` in our case), then run the `convox proxy` command in a terminal:
 

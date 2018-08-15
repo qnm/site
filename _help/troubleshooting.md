@@ -18,7 +18,7 @@ When you know there is an issue and want to stop a deployment, you can run the `
 
 ## My app deployed but I cannot access it
 
-Run `convox apps info` to find the load balancer endpoints for your application.
+Run `convox services` to find the load balancer endpoints for your application.
 
 Run `convox ps` to determine if your application is booting successfully.
 

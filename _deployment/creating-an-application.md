@@ -15,4 +15,4 @@ An application represents a single codebase deployed to Convox. You can create a
 
 **Wait for the application to finish creating:**
 
-    $ convox apps info -a <name>
+    $ convox apps wait -a <name>
