@@ -89,7 +89,7 @@ A resource is a network-attached dependency of your application. This example co
 | `durable` | `false`          | Automatic failover                      |
 | `iops`    |                  | Provisioned IOPS for database disks     |
 | `storage` | `20`             | GB of storage to provision              |
-| `version` | `1.4.34`         | MySQL version                           |
+| `version` | `5.7.22`         | MySQL version                           |
 
 #### redis
 
@@ -98,7 +98,7 @@ A resource is a network-attached dependency of your application. This example co
 | `class`   | `cache.t2.micro` | Instance class     |
 | `durable` | `false`          | Automatic failover |
 | `nodes`   | `1`              | Number of nodes    |
-| `version` | `1.4.34`         | Redis version      |
+| `version` | `2.8.24`         | Redis version      |
 
 #### postgres
 
@@ -108,7 +108,7 @@ A resource is a network-attached dependency of your application. This example co
 | `durable` | `false`          | Automatic failover                      |
 | `iops`    |                  | Provisioned IOPS for database disks     |
 | `storage` | `20`             | GB of storage to provision              |
-| `version` | `1.4.34`         | PostgreSQL version                      |
+| `version` | `9.6.6`          | PostgreSQL version                      |
 
 ## Services
 
