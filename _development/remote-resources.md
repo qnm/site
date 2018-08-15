@@ -76,8 +76,8 @@ Let's say we want to proxy from port 8000 on our local machine to port 80 of the
 First get the service endpoint by running `convox services`:
 
     $ convox services
-		SERVICE  DOMAIN                                                       PORTS
-		web      flask-counter-NJS6JDQ-842041791.us-east-1.elb.amazonaws.com  80
+    SERVICE  DOMAIN                                                       PORTS
+    web      flask-counter-NJS6JDQ-842041791.us-east-1.elb.amazonaws.com  80
 
 Then choose a port on your local machine (`8000` in our case), then run the `convox proxy` command in a terminal:
 

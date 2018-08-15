@@ -9,8 +9,8 @@ You can easily map a custom domain to a Convox application by creating a `CNAME`
 You can find the load balancer hostname(s) for your application using `convox services`:
 
     $ convox services
-		SERVICE  DOMAIN                                                  PORTS
-		web      docs-web-R72RMTP-326048479.us-east-1.elb.amazonaws.com  80
+    SERVICE  DOMAIN                                                  PORTS
+    web      docs-web-R72RMTP-326048479.us-east-1.elb.amazonaws.com  80
 
 ## Configuring DNS
 
