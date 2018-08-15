@@ -6,6 +6,8 @@ title: convox.yml
 resources:
   database:
     type: postgres
+    options:
+      storage: 200
 services:
   web:
     build: .
