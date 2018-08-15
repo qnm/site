@@ -62,20 +62,51 @@ This section acts similar to the `environment:` section for each individual serv
 resources:
   database:
     type: postgres
+    options:
+      storage: 100
 ```
 
 A resource is a network-attached dependency of your application. This example configures a PostgreSQL database named `database`.
 
-### type
+### Available types
+<p></p>
 
-The type of resource to create.
+#### memcached
 
-Available types:
+| Option    | Default          | Description       |
+|-----------|------------------|-------------------|
+| `class`   | `cache.t2.micro` | Instance class    |
+| `nodes`   | `1`              | Number of nodes   |
+| `version` | `1.4.34`         | Memcached version |
 
-  * `memcached`
-  * `mysql`
-  * `postgres`
-  * `redis`
+#### mysql
+
+| Option    | Default          | Description                             |
+|-----------|------------------|-----------------------------------------|
+| `class`   | `cache.t2.micro` | Instance class                          |
+| `durable` | `false`          | Automatic failover                      |
+| `iops`    |                  | Provisioned IOPS for database disks     |
+| `storage` | `20`             | GB of storage to provision              |
+| `version` | `1.4.34`         | MySQL version                           |
+
+#### redis
+
+| Option    | Default          | Description        |
+|-----------|------------------|--------------------|
+| `class`   | `cache.t2.micro` | Instance class     |
+| `durable` | `false`          | Automatic failover |
+| `nodes`   | `1`              | Number of nodes    |
+| `version` | `1.4.34`         | Redis version      |
+
+#### postgres
+
+| Option    | Default          | Description                             |
+|-----------|------------------|-----------------------------------------|
+| `class`   | `cache.t2.micro` | Instance class                          |
+| `durable` | `false`          | Automatic failover                      |
+| `iops`    |                  | Provisioned IOPS for database disks     |
+| `storage` | `20`             | GB of storage to provision              |
+| `version` | `1.4.34`         | PostgreSQL version                      |
 
 ## Services
 
