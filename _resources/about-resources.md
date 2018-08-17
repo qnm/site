@@ -64,7 +64,7 @@ You can add this URL as an environment variable to any application with `convox 
 
     $ convox env set MEMCACHED_URL='dev-ca-m3z4ik3n7bej.77prpt.cfg.use1.cache.amazonaws.com:11211' --app example-app
 
-### Via `convox resource link`
+### Via `convox resources link`
 
 To forward logs from an application to a syslog forwarder use `convox resources link`:
 
@@ -76,10 +76,10 @@ Note: This is currently only supported with `syslog` resources. To link other re
 
 ## Resource Updates
 
-A few types of resources can be updated. For instance, to modify the URL of a syslog resource that has `example.com` as the URL, run `convox resources update <resource name> --param=new_value`:
+A few types of resources can be updated. For instance, to modify the URL of a syslog resource that has `example.com` as the URL, run `convox resources update <resource name> Option=newvalue`:
 
 ```
-$ convox resources update syslog-3165 --url=example.net
+$ convox resources update syslog-3165 Url=example.net
 Updating syslog-3165 (url="example.com")...UPDATING
 
 $ convox resources info syslog-3165

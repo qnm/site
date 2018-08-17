@@ -13,14 +13,7 @@ This will provision Memcached on Amazon ElastiCache. Creation can take a few min
 
 ### Additional Options
 
-| Option                            | Description                                         |
-| --------------------------------- | --------------------------------------------------- |
-| `--instance-type=<instance.type>` | Elasticache instance type\* to use                  |
-| `--name=<name>`                   | Name of the resource to create                       |
-| `--num-cache-nodes=<n>`           | Number of cache nodes the cache cluster should have |
-| `--private`                       | Create in private subnets                           |
-
-\* See [Available Elasticache node types](https://aws.amazon.com/elasticache/details/#Available_Cache_Node_Types)
+See `convox resources options memcached` for a list of available options.
 
 ## Resource Information
 
@@ -29,14 +22,20 @@ To see relevant info about the Memcached instance, use the `convox resources inf
     $ convox resources info memcached-5864
     Name    memcached-5864
     Status  running
-    Exports
-      URL: dev-ca-m3z4ik3n7bej.77prpt.cfg.use1.cache.amazonaws.com:11211
+    URL     memcached://:password@dev-ca-m3z4ik3n7bej.77prpt.cfg.use1.cache.amazonaws.com:11211
 
 ## Resource Linking
 
 You can add this URL as an environment variable to any application with `convox env set`:
 
-    $ convox env set MEMCACHED_URL='dev-ca-m3z4ik3n7bej.77prpt.cfg.use1.cache.amazonaws.com:11211' --app example-app
+    $ convox env set MEMCACHED_URL='memcached://:password@dev-ca-m3z4ik3n7bej.77prpt.cfg.use1.cache.amazonaws.com:11211' --app example-app
+
+## Resource Update
+
+You can change options with `convox resources update`:
+
+    $ convox resources update memcached-5864 InstanceType=cache.t2.small
+    Updating memcached-5864... UPDATING
 
 ## Resource Deletion
 

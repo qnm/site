@@ -13,19 +13,7 @@ This will provision postgres database on the Amazon RDS service. Creation can ta
 
 ### Additional Options
 
-<table>
-  <tr><th>Option</th><th>Description</th></tr>
-  <tr><td><code>--allocated-storage=<b><i>10</i></b></code></td><td>Size of the database in GB</td></tr>
-  <tr><td><code>--database=<b><i>app</i></b></code></td><td>The name of the database to create</td></tr>
-  <tr><td><code>--instance-type=<b><i>db.t2.micro</i></b></code></td><td>RDS instance type to use</td></tr>
-  <tr><td><code>--max-connections=<b><i>{DBInstanceClassMemory/15000000}</i></b></code></td><td>Maximum connections to allow</td></tr>
-  <tr><td><code>--multi-az</code></td><td>Enhanced availability and durability</td></tr>
-  <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
-  <tr><td><code>--password=<b><i>&lt;password&gt;</i></b></code></td><td>Database server password</td></tr>
-  <tr><td><code>--private</code></td><td>Create in private subnets</td></tr>
-  <tr><td><code>--username=<b><i>&lt;username&gt;</i></b></code></td><td>Database server username</td></tr>
-  <tr><td><code>--version=<b><i>9.5.2</i></b></code></td><td>Postgres version</td></tr>
-</table>
+See `convox resources options postgresql` for a list of available options.
 
 ## Resource Information
 
@@ -41,6 +29,13 @@ To see relevant info about the database, use the `convox resources info` command
 You can add this URL to any application with `convox env set`:
 
     $ convox env set 'DATABASE_URL=postgres://postgres:i3tNTHpZ8wmCn88nvN2c@dev-postgres-3785.cbm068zjzjcr.us-east-1.rds.amazonaws.com:5432/app' --app example-app
+
+## Resource Update
+
+You can change options with `convox resources update`:
+
+    $ convox resources update postgres-3785 MultiAZ=true
+    Updating postgres-3785... UPDATING
 
 ## Resource Deletion
 
