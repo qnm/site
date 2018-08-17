@@ -13,15 +13,7 @@ This will provision Redis on the Amazon ElastiCache. Creation can take a few min
 
 ### Additional Options
 
-<table>
-  <tr><th>Option</th><th>Description</th></tr>
-  <tr><td><code>--automatic-failover-enabled</code></td><td>Enable automatic failover (requires <code>num-cache-clusters > 1</code>)</td></tr>
-  <tr><td><code>--database=<b><i>app</i></b></code></td><td>The name of the database to create</td></tr>
-  <tr><td><code>--instance-type=<b><i>cache.t2.micro</i></b></code></td><td>ElastiCache instance type to use</td></tr>
-  <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
-  <tr><td><code>--num-cache-clusters=<b><i>1</i></b></code></td><td>Number of cache clusters to create (one read-write, rest read-only)</td></tr>
-  <tr><td><code>--private</code></td><td>Create in private subnets</td></tr>
-</table>
+See `convox resources options redis` for a list of available options.
 
 ## Resource Information
 
@@ -30,13 +22,20 @@ To see relevant info about the database, use the `convox resources info` command
     $ convox resources info redis-3785
     Name    redis-3785
     Status  running
-    URL     redis://atb1alu32d6lfy19.c63i2h.ng.0001.use1.cache.amazonaws.com:6379/0
+    URL     redis://:password@atb1alu32d6lfy19.c63i2h.ng.0001.use1.cache.amazonaws.com:6379/0
 
 ## Resource Linking
 
 You can add this URL as an environment variable to any application with `convox env set`:
 
-    $ convox env set REDIS_URL='redis://atb1alu32d6lfy19.c63i2h.ng.0001.use1.cache.amazonaws.com:6379/0' --app example-app
+    $ convox env set REDIS_URL='redis://:password@atb1alu32d6lfy19.c63i2h.ng.0001.use1.cache.amazonaws.com:6379/0' --app example-app
+
+## Resource Update
+
+You can change options with `convox resources update`:
+
+    $ convox resources update redis-3785 InstanceType=cache.t2.small
+    Updating redis-3785... UPDATING
 
 ## Resource Deletion
 

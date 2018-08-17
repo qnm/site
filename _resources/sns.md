@@ -13,11 +13,7 @@ This will provision an SNS topic. Creation will take a few moments. To check the
 
 ### Additional Options
 
-<table>
-  <tr><th>Option</th><th>Description</th></tr>
-  <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
-  <tr><td><code>--queue=<b><i>&lt;queue&gt;</i></b></code></td><td>The name of the SQS Queue that should subscribe to this topic</td></tr>
-</table>
+See `convox resources options sns` for a list of available options.
 
 ## Resource Information
 
@@ -26,8 +22,20 @@ To see relevant info about the SNS topic, use the `convox resources info` comman
     $ convox resources info sns-3331
     Name    sns-3331
     Status  running
-    Exports
-      URL: sns://AKIBJIUUHXA6ZS4IOQIQ:ETq/IKs1OfSnLV4UC26eayufmVi1W0AJEEmbIyzh@arn:aws:sns:us-east-1:235997312769:development-sns-3331
+    URL     sns://ACCESS:SECRET@arn:aws:sns:us-east-1:235997312769:development-sns-3331
+
+## Resource Linking
+
+You can add this URL as an environment variable to any application with `convox env set`:
+
+    $ convox env set SNS_URL='sns://ACCESS:SECRET@arn:aws:sns:us-east-1:235997312769:development-sns-3331' --app example-app
+
+## Resource Update
+
+You can change options with `convox resources update`:
+
+    $ convox resources update sns-3331 Queue=arn:...
+    Updating sns-3331... UPDATING
 
 ## Resource Deletion
 

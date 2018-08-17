@@ -13,17 +13,7 @@ This will provision MySQL database on the Amazon RDS service. Creation can take 
 
 ### Additional Options
 
-<table>
-  <tr><th>Option</th><th>Description</th></tr>
-  <tr><td><code>--allocated-storage=<b><i>10</i></b></code></td><td>Size of the database in GB</td></tr>
-  <tr><td><code>--database=<b><i>&lt;database-name&gt;</i></b></code></td><td>The name of the database to create</td></tr>
-  <tr><td><code>--instance-type=<b><i>db.t2.micro</i></b></code></td><td>RDS instance type to use</td></tr>
-  <tr><td><code>--multi-az</code></td><td>Enhanced availability and durability</td></tr>
-  <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
-  <tr><td><code>--password=<b><i>&lt;password&gt;</i></b></code></td><td>Database server password</td></tr>
-  <tr><td><code>--private</code></td><td>Create in private subnets</td></tr>
-  <tr><td><code>--username=<b><i>&lt;username&gt;</i></b></code></td><td>Database server username</td></tr>
-</table>
+See `convox resources options mysql` for a list of available options.
 
 ## Resource Information
 
@@ -32,20 +22,20 @@ To see relevant info about the database, use the `convox resources info` command
     $ convox resources info mysql-3785
     Name    mysql-3785
     Status  running
-    URL     mysql://mysql::)t[THpZ[wmCn88n,N(:@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:3306/app
+    URL     mysql://app:password@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:3306/app
 
 ## Resource Linking
 
 You can add this URL to any application with `convox env set`:
 
-    $ convox env set 'DATABASE_URL=mysql://mysql::)t[THpZ[wmCn88n,N(:@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:3306/app' --app example-app
+    $ convox env set 'DATABASE_URL=mysql://mysql:password@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:3306/app' --app example-app
 
 ## Resource Update
 
-You can change options like multi-zone availability with `convox resources update`:
+You can change options with `convox resources update`:
 
-    $ convox resources update mysql-3785 --multi-az
-    Updating mysql-3785 (multi-az="true")...UPDATING
+    $ convox resources update mysql-3785 MultiAZ=true
+    Updating mysql-3785... UPDATING
 
 ## Resource Deletion
 

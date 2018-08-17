@@ -6,15 +6,8 @@ You can use the `webhook` resource to subscribe to notifications for events on y
 
 ## Resource Creation
 
-    $ convox resources create webhook --url http://example.org
+    $ convox resources create webhook Url=http://example.org
     Creating webhook-9344 (webhook)... CREATING
-
-### Additional Options
-
-<table>
-  <tr><th>Option</th><th>Description</th></tr>
-  <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
-</table>
 
 ## Resource Events
 
