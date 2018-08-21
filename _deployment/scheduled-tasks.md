@@ -11,7 +11,7 @@ Convox can set up `cron`-like recurring tasks on any of your application process
 timers:
   cleanup:
     command: bin/cleanup
-    schedule: 0 3 * * ? *
+    schedule: "0 3 * * ? *"
     service: web
 ```
 

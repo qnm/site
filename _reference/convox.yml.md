@@ -32,7 +32,7 @@ services:
     image: awesome/metrics
 timers:
   cleanup:
-    schedule: 0 3 * * ? *
+    schedule: "0 3 * * ? *"
     command: bin/cleanup
     service: web
 ```
@@ -263,7 +263,7 @@ Toggle load balancer stickiness (using a cookie to keep a user associated with a
 timers:
   cleanup:
     command: bin/cleanup
-    schedule: 0 3 * * ? *
+    schedule: "0 3 * * ? *"
     service: web
 ```
 
